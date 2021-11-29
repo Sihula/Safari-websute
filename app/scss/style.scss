@@ -6,6 +6,7 @@
 
 
 // header start
+
 .header {
   margin-bottom: 100px;
   background-image: url(../images/header-bg.jpg);
@@ -72,6 +73,37 @@
   }
 }
 
+.burger {
+
+
+  &__menu {
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    display: none;
+  }
+
+  &__menu-line1 {
+    height: 3px;
+
+    background-color: #fff;
+  }
+
+  &__menu-line2 {
+    height: 3px;
+
+    background-color: #fff;
+    margin: 5px 0 5px;
+  }
+
+  &__menu-line3 {
+    height: 3px;
+
+    background-color: #fff;
+  }
+}
+
+
 .header__box {
   display: flex;
   flex-direction: column;
@@ -129,6 +161,7 @@
 
   &__inner-img {
     object-fit: cover;
+    width: 100%;
 
   }
 
@@ -217,80 +250,54 @@
 
 }
 
-// proposal section start
-.proposal {
-  margin-bottom: 100px;
-
-  &_inner-row1 {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 32px;
-
-
-  }
-
-  &_inner-row2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-  }
-
-  &__title {
+// popular section start
+.popular {
+  h2 {
     font-size: 36px;
     line-height: 42px;
-    font-weight: 600;
-    margin-bottom: 60px;
     text-align: center;
+    margin-bottom: 40px;
   }
 
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-  }
 
   &__item {
-    position: relative;
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 32px;
   }
 
-  &__item-img {
-    object-fit: cover;
-
-  }
-
-  &__item-info {
-    position: absolute;
-    top: 0;
-    padding: 15px;
-    height: 100%;
+  &__link {
+    padding: 16px 24px 19px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    min-height: 256px;
+    background-position: center;
   }
 
-  &__item-text {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  .popular__link:nth-child(3),
+  .popular__link:nth-child(6) {
+    grid-column: span 2;
+    grid-row: span 2;
   }
+
+  &__titles {
+    margin-bottom: 10px;
+  }
+
+  &__country {
+    margin-bottom: 10px;
+  }
+
+
 }
 
-.colm {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
+// popular section end
 
-.proposal-col1 {
-  margin: 0 17px;
-}
-
-.proposal-col2 {
-  margin: 0 32px;
-}
 
 .map {
   margin-bottom: 100px;
@@ -338,18 +345,6 @@
   &__inner-pop {
     position: relative;
 
-    &::after {
-      content: '';
-      position: absolute;
-      background-image: url(../images/popbtn.svg);
-      width: 73px;
-      height: 73px;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 50%;
-      transform: translateX(-50%);
-      cursor: pointer;
-    }
   }
 
 
@@ -357,6 +352,7 @@
     height: 370px;
     object-fit: cover;
     background-position: left center;
+
   }
 }
 
@@ -387,8 +383,8 @@
   }
 
   &__inner-img {
-    margin: 0 15px 30px 15px;
-    padding: 0 2px;
+    margin-bottom: 20px;
+    padding: 0 10px;
   }
 }
 
@@ -508,10 +504,7 @@ button.slick-prev {
     font-weight: 500;
   }
 
-  .bigNum {
-    width: 277px;
 
-  }
 }
 
 // form section 
@@ -530,7 +523,6 @@ button.slick-prev {
     font-weight: 600;
   }
 
-  &__inner {}
 
   &__inner-box {
     display: flex;
@@ -604,8 +596,6 @@ button.slick-prev {
 
   }
 
-  &__logo-link {}
-
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -616,8 +606,6 @@ button.slick-prev {
       padding: 15px;
     }
   }
-
-  &__inner-items {}
 
   &__inner-title {
     font-size: 14px;
